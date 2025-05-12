@@ -1,6 +1,11 @@
 {
-	"dockerFile": "Dockerfile",
-	"features": {
-		"ghcr.io/devcontainers/features/rust:1": {}
-	}
+    "name": "Rust Development Environment",
+    "image": "mcr.microsoft.com/devcontainers/rust:latest",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rust-lang.rust-analyzer"
+            ]
+        }
+    }
 }
