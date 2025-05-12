@@ -1,10 +1,6 @@
 {
-	"image": "mcr.microsoft.com/devcontainers/universal:2",
 	"dockerFile": "Dockerfile",
 	"features": {
 		"ghcr.io/devcontainers/features/rust:1": {}
-	},
-	"extensions": [
-		"matklad.rust-analyzer"
-		]
+	}
 }
