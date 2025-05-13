@@ -4,12 +4,23 @@ use std::cmp::Ordering;
 use std::io;
 
 
-pub fn guess_num() {
+pub fn guess_num() -> Ordering{
 
     // let mut input: String = String::new();
     let secret_number = rand::rng().random_range(1..=100);
 
-    println!("{}", secret_number);
+    let mut input = String::new();
+    println!("Please enter a number between 1 and 100:");
+
+
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Failed to read line");
+
+    let out = input.trim().parse::<u32>().unwrap();
+
+    return out.cmp(&secret_number);
+
 
 }
 
