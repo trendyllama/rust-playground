@@ -1,8 +1,17 @@
-
 use interpreter;
 
 fn main() {
 
-    let _ = interpreter::capture_input();
-
+    interpreter::guess_num();
+    loop {
+        match interpreter::capture_input() {
+            Some(_) => {
+                println!("Input captured.");
+            }
+            None => {
+                println!("Exiting...");
+                break;
+            }
+        }
+    }
 }

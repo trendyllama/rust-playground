@@ -1,40 +1,31 @@
 
-use std::io::{stdin};
+use rand::Rng;
+use std::cmp::Ordering;
+use std::io;
 
-struct Atom {
-    symbol: String,
 
-}
+pub fn guess_num() {
 
-struct Operator {
-    symbol: String,
-    precedence: u8,
+    // let mut input: String = String::new();
+    let secret_number = rand::rng().random_range(1..=100);
 
-}
-
-struct Expression {
+    println!("{}", secret_number);
 
 }
 
+pub fn capture_input() -> Option<String> {
 
-pub fn capture_input() -> Result<(), Err> {
-
-    let mut input = String::new();
+    let mut input: String = String::new();
     println!("Please enter a string:");
-    stdin().read_line(&mut input);
 
-    input.trim().to_string();
+    std::io::stdin().read_line(&mut input).expect("Failed to read line");
 
-    println!("You entered: {}", input);
-
-    match input.as_str() {
+    match input.trim() {
         "exit" => {
-            println!("Exiting...");
-            return Ok(());
+            return None;
         }
         _ => {
-            println!("You entered: {}", input);
-            return Ok(())
+            return Some(input)
         }
     }
 
