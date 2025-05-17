@@ -1,5 +1,9 @@
 use std::cmp::Ordering;
 use interpreter;
+mod primative_recursive_funcs;
+use primative_recursive_funcs::fibonacci;
+mod mapping;
+use mapping::playing_w_vectors;
 
 fn run_guess_num() {
     loop {
@@ -31,5 +35,10 @@ fn main() {
 
 
     run_capture_input();
+
+    playing_w_vectors();
+
+    let n = 10;
+    println!("Fibonacci of {} is {}", n, fibonacci(n));
 
 }
