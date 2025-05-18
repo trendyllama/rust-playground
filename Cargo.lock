@@ -27,13 +27,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "interpreter"
-version = "0.1.0"
-dependencies = [
- "rand",
-]
-
-[[package]]
 name = "libc"
 version = "0.2.172"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -105,7 +98,6 @@ dependencies = [
 name = "rust-playground"
 version = "0.1.0"
 dependencies = [
- "interpreter",
  "rand",
 ]
 
