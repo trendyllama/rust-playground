@@ -23,10 +23,7 @@ pub fn fibonacci(n: u64) -> u64 {
 }
 
 
-pub fn successor(n: u64) -> u64 {
 
-    return n + 1;
-}
 
 #[cfg(test)]
 mod tests {
