@@ -1,51 +1,37 @@
-
-
+#[allow(dead_code)]
 pub fn factorial(n: u64) -> u64 {
-
-    return match n {
+    match n {
         0 => 1,
-        _ => n * factorial(n - 1)
+        _ => n * factorial(n - 1),
     }
-
 }
-
 
 pub fn fibonacci(n: u64) -> u64 {
-
-    return match n {
-
+    match n {
         0 => 0,
         1 => 1,
-        _ => fibonacci(n - 1) + fibonacci(n - 2)
-
-
+        _ => fibonacci(n - 1) + fibonacci(n - 2),
     }
 }
-
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    const FIB_OUTPUT: [u64; 7] = [0, 1, 1, 2, 3, 5, 8];
+    const FAC_OUTPUT: [u64; 6] = [1, 1, 2, 6, 24, 120];
+
     #[test]
     fn test_fib() {
-
-        assert_eq!(fibonacci(0), 0);
-        assert_eq!(fibonacci(1), 1);
-        assert_eq!(fibonacci(2), 1);
-        assert_eq!(fibonacci(3), 2);
-        assert_eq!(fibonacci(4), 3);
-        assert_eq!(fibonacci(5), 5);
-        assert_eq!(fibonacci(6), 8);
-
-
+        for i in 0..6 {
+            assert_eq!(fibonacci(i), FIB_OUTPUT[i as usize]);
+        }
     }
 
     #[test]
     fn test_fac() {
-
-        assert_eq!(factorial(0), 1);
-        assert_eq!(factorial(1), 1);
-        assert_eq!(factorial(5), 120);
+        for i in 0..5 {
+            assert_eq!(factorial(i), FAC_OUTPUT[i as usize]);
+        }
     }
 }
